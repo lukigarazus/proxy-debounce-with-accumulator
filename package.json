@@ -1,6 +1,6 @@
 {
   "name": "proxy-debounce-with-accumulator",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Simple function creating a debounced function with Proxy",
   "engines": {
     "node": ">= 12.13 <13"
@@ -39,8 +39,8 @@
     "proxy",
     "Proxy",
     "ES6",
-    "Immutable",
-    "immutable"
+    "debounce",
+    "accumulator"
   ],
   "homepage": "https://github.com/lukigarazus/proxy-debounce-with-accumulator"
 }
