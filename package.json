@@ -1,6 +1,6 @@
 {
   "name": "proxy-debounce-with-accumulator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple function creating a debounced function with Proxy",
   "engines": {
     "node": ">= 12.13 <13"
