@@ -3,7 +3,7 @@ const { debounce: debounce2 } = require('lodash');
 
 describe('Tests', () => {
   it('Simple', async () => {
-    const f = ns => ns[0];
+    const f = ns => ns[0][0];
     const acc = [];
     const dF = debounce(f, 100, acc);
     const ldF = debounce2(f, 100);
@@ -12,7 +12,7 @@ describe('Tests', () => {
     for (let i = 2; i < 10; i++) {
       dF(i);
     }
-    expect(acc).toEqual([2, 3, 4, 5, 6, 7, 8, 9]);
+    expect(acc).toEqual([[2], [3], [4], [5], [6], [7], [8], [9]]);
     expect(await dF(10)).toEqual(2);
   });
   it('Canonical use case - performance', () => {
@@ -49,11 +49,13 @@ describe('Tests', () => {
     }
     console.timeEnd('proxified function');
   });
-  it('More arity', async () => {
+  it('Greater arity', async () => {
     const f = debounce(
-      (args, a) => console.log(args) || args.reduce((acc, el) => acc + el),
+      (args, a) =>
+        args.reduce((acc, el) => acc + el.reduce((acc, el) => acc + el, 0), 0),
       100,
     );
-    expect(await f(1, 2)).toEqual(3);
+    f(1, 2);
+    expect(await f(3, 4)).toEqual(10);
   });
 });

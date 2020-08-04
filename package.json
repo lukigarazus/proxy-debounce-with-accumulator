@@ -1,6 +1,6 @@
 {
   "name": "proxy-debounce-with-accumulator",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Simple function creating a debounced function with Proxy",
   "engines": {
     "node": ">= 12.13 <13"
@@ -32,9 +32,7 @@
   },
   "author": "Łukasz Karczewski <ywnwa96@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "tslib": "~1.10.0"
-  },
+  "dependencies": {},
   "keywords": [
     "proxy",
     "Proxy",

@@ -1,5 +1,4 @@
 export default (fn, delay: number, acc?: any[]) => {
-  console.log(fn.length);
   let timeout;
   let accumulator = acc || [];
   let cResolve = arg => {
@@ -16,7 +15,7 @@ export default (fn, delay: number, acc?: any[]) => {
       cResolve(undefined);
       return new Promise(resolve => {
         cResolve = resolve;
-        accumulator.push(...args);
+        accumulator.push(args);
         timeout = setTimeout(timeoutFunction, delay);
       });
     },

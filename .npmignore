@@ -1,6 +1,5 @@
 node_modules/
 src/
-coverage/
 __tests__/
 visualize.js
 jest.config.js
