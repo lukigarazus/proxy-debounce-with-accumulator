@@ -16,7 +16,7 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-such a code would call the **f** function once, as expected of a debounced function, but during this call the value of **n** would equal **[0,1,2,3,4,5,6,7,8,9]**, since the call arguments are **accumulated**.
+such a code would call the **f** function once, as expected of a debounced function, but during this call the value of **n** would equal **[[0],[1],[2],[3],[4],[5],[6],[7],[8],[9]]**, since the call arguments are **accumulated**.
 
 You can also **await** such a function:
 
@@ -35,7 +35,7 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-In such a code the arguments passed to the function would be: **[0,1,2,3,4]** and **[5,6,7,8,9]**.
+In such a code the arguments passed to the function would be: **[[0],[1],[2],[3],[4]]** and **[[5],[6],[7],[8],[9]]**.
 
 ### Performance
 
